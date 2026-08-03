@@ -1,79 +1,235 @@
-# Uber Clone Mobile App
-
-A Flutter-based Uber clone UI with clean architecture and Riverpod, featuring complete ride-sharing flow with dummy interactions.
+# RideNova Mobile App Documentation
 
 ## Overview
 
-This project implements a mobile-only Uber clone UI using Flutter. It follows clean architecture principles and uses Riverpod for state management. The app focuses on providing a complete user experience for ride-sharing applications.
+RideNova is a Flutter-based mobile ride-booking application built using **Clean Architecture** and **Riverpod** for efficient and scalable state management. The application provides a complete ride-booking experience, including user authentication, Google Maps integration, location selection, vehicle selection, driver search, ride tracking, ride history, and profile management.
 
-## Features
+A standout feature of RideNova is its **Gemini AI-powered Ride Assistant**, which allows users to book rides using natural language. Instead of manually entering booking details, users can simply describe their journey, and the AI intelligently extracts the pickup location, destination, travel date, travel time, and preferred vehicle type to streamline the booking process.
 
-- Splash screen and onboarding flow
-- Authentication (login/signup) with validation
-- Home screen with map view and ride booking
-- Location selection for pickup and dropoff
-- Vehicle type selection with price estimates
-- Driver search and ride assignment
-- Ride in progress tracking
-- Ride completion with fare summary
-- User profile and ride history
+The project is designed specifically for Android and iOS platforms with a modular architecture, making it easy to extend with backend services, online payments, real-time ride tracking, and additional AI capabilities in the future.
 
-## Getting Started
+---
 
-### Prerequisites
+## Architecture
 
-- Flutter SDK (latest stable version)
-- Android Studio or Xcode for mobile deployment
-- An emulator or physical device for testing
+The project follows **Clean Architecture** principles with a feature-first organization.
 
-### Installation
+```text
+lib/
+├── app/              # App-wide configurations
+├── core/             # Core utilities, services and reusable widgets
+└── features/
+    ├── ai_assistant/ # Gemini AI assistant
+    ├── auth/         # Authentication
+    ├── home/         # Home screen
+    ├── onboarding/   # Splash & onboarding
+    ├── profile/      # User profile
+    └── ride/         # Ride booking & tracking
+```
 
-1. Clone this repository
-2. Navigate to the project directory
-3. Run `flutter pub get` to install dependencies
-4. Connect a mobile device or start an emulator
-5. Run `flutter run` to launch the app
+---
 
-## Project Structure
+## Key Features
 
-The project follows a feature-first organization with clean architecture principles:
+### 1. Onboarding & Authentication
 
-- **lib/app**: App-wide configurations (theme, routing)
-- **lib/core**: Core utilities and reusable widgets
-- **lib/features**: Feature modules organized by domain
-  - **auth**: Authentication-related screens and logic
-  - **home**: Home screen and map view
-  - **onboarding**: Splash and onboarding screens
-  - **profile**: User profile management
-  - **ride**: Ride booking and tracking functionality
+- Splash screen with animated logo
+- Interactive onboarding screens
+- Login & Sign Up
+- Form validation
+- Clean authentication flow
 
-## Mobile Development Focus
+### 2. Home Screen
 
-This project is designed specifically for mobile platforms (Android and iOS) with a focus on providing a native-like experience. It uses:
+- Google Maps integration
+- Current location support
+- Saved places
+- Destination search
+- Quick ride booking
+- AI Assistant shortcut
 
-- Responsive layouts for various mobile screen sizes
-- Platform-specific UI elements where appropriate
-- Material Design guidelines for a modern look and feel
-- Efficient state management for smooth performance
+### 3. Gemini AI Ride Assistant
 
-## Viewing on Mobile Devices
+- Natural language ride booking
+- AI-powered booking assistant using **Google Gemini**
+- Extracts booking details from user messages
+- Automatically identifies:
+    - Pickup location
+    - Destination
+    - Travel date
+    - Travel time
+    - Vehicle type
+- Reduces manual booking steps
+- Built using Clean Architecture for future AI model integration
+- Designed for future voice-based ride booking
 
-To view the app on a physical device:
+---
 
-1. Enable USB debugging on your Android device or register your iOS device
-2. Connect your device to your computer
-3. Run `flutter devices` to ensure your device is recognized
-4. Run `flutter run` to install and launch the app
+### 4. Ride Booking
 
-Alternatively, use an emulator:
+- Pickup & destination selection
+- Vehicle selection
+- Economy
+- Comfort
+- Premium
+- Fare estimation
+- Payment method selection
+- Booking confirmation
 
-- Android: `flutter run -d <emulator_id>`
-- iOS: `flutter run -d <simulator_id>`
+---
 
-## Screenshots
+### 5. Ride Experience
 
-(Note: Screenshots would be included here in a complete project)
+- Driver search animation
+- Driver details
+- Ride progress tracking
+- Ride completion summary
+- Fare summary
 
-## Credits
+---
 
-This project was developed as a demonstration of Flutter's capabilities for mobile app development, focusing on UI implementation and state management with Riverpod.
+### 6. User Profile
+
+- User profile management
+- Ride history
+- Settings
+- Account information
+
+---
+
+## AI Module Architecture
+
+The AI booking assistant follows the application's Clean Architecture.
+
+```
+Presentation Layer
+        │
+        ▼
+Riverpod Provider
+        │
+        ▼
+Use Case
+        │
+        ▼
+Repository
+        │
+        ▼
+Gemini Remote Data Source
+        │
+        ▼
+Google Gemini AI
+```
+
+---
+
+## State Management
+
+RideNova uses **Flutter Riverpod** for reactive state management.
+
+Main providers include:
+
+- `currentRideProvider`
+- `savedLocationsProvider`
+- `vehicleTypesProvider`
+- `selectedVehicleTypeProvider`
+- `rideHistoryProvider`
+- `aiAssistantProvider`
+
+---
+
+## Navigation
+
+Navigation is implemented using **go_router**, providing clean and declarative routing throughout the application.
+
+Main routes include:
+
+- Splash
+- Onboarding
+- Login
+- Signup
+- Home
+- AI Assistant
+- Location Selector
+- Vehicle Selection
+- Driver Search
+- Ride In Progress
+- Ride Completion
+- Ride History
+- Profile
+- Settings
+
+---
+
+## UI Components
+
+Reusable UI components include:
+
+- CustomButton
+- CustomTextField
+- LoadingIndicator
+- VehicleTypeCard
+- RideMap
+- AI Chat Bubble
+- AI Text Field
+- Ride Summary Card
+
+---
+
+## Mobile-Specific Features
+
+### Android
+
+- Material Design UI
+- Google Maps integration
+- Location permissions
+- Responsive layouts
+
+### iOS
+
+- Cupertino-style components
+- Native navigation
+- Maps integration
+- Responsive layouts
+
+---
+
+## Technologies Used
+
+- Flutter
+- Dart
+- Riverpod
+- GoRouter
+- Google Maps Flutter
+- HTTP
+- Flutter Secure Storage
+- Clean Architecture
+- Google Gemini AI Integration
+
+---
+
+## Future Enhancements
+
+- Firebase Authentication
+- Backend API integration
+- Online ride booking
+- Secure payment gateway
+- Real-time driver tracking
+- Push notifications
+- Voice-enabled AI booking
+- Multi-language AI support
+- Personalized ride recommendations
+- Smart fare prediction
+
+---
+
+## Development Notes
+
+- Built using **Flutter** and **Dart**
+- Implements **Clean Architecture** with feature-first organization
+- Uses **Riverpod** for scalable state management
+- Navigation handled using **GoRouter**
+- Google Maps integration for location services
+- AI booking assistant designed using **Google Gemini**
+- Modular architecture for easy backend and AI service integration
+- Designed for Android and iOS mobile platforms
+- Optimized for portrait orientation
