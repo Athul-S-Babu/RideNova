@@ -18,7 +18,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<OnboardingItem> _onboardingItems = [
     OnboardingItem(
-      title: 'Welcome to Hopyn',
+      title: 'Welcome to RideNova',
       description: 'Your ride, your way. Get to where you need to go with ease.',
       imagePath: AppAssets.onboarding1Svg,
 

@@ -1,7 +1,8 @@
 
 
 
-import 'package:hopyn/features/home/domain/entities/vehicle_type.dart';
+
+import 'package:RideNova/features/home/domain/entities/vehicle_type.dart';
 
 import '../../../ride/domain/entities/driver.dart';
 import 'location.dart';

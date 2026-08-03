@@ -66,14 +66,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   child: CircleAvatar(
                     radius: 100,
                     backgroundColor: context.colorScheme.primary.withOpacity(0.1),
-                    child: Image.asset('assets/images/hopyn_logo.png')
+                    child: Image.asset('assets/images/re_nova.png')
                   ),
                 ),
 
                 const SizedBox(height: 10),
 
                 Text(
-                  'Welcome to Hopyn',
+                  'Welcom to RideNova',
                   style: context.textTheme.headlineMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: AppColors.kYellow,
@@ -82,7 +82,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 const SizedBox(height: 8),
 
                 Text(
-                  'Ready for a Comfort Ride! ',
+                  'Your Ride.Your Way! ',
                   style: context.textTheme.bodyMedium?.copyWith(
                     color: Colors.grey[600],
                   ),

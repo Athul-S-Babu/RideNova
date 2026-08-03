@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hopyn/core/utils/constants.dart';
+import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../home/domain/entities/vehicle_type.dart';
 

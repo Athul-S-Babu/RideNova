@@ -1,5 +1,5 @@
-name: hopyn
-description: A Flutter-based Uber clone UI with clean architecture and Riverpod.
+name: RideNova
+description: A Flutter-based online taxi app with ai using clean architecture and Riverpod.
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -18,7 +18,7 @@ dependencies:
   flutter_secure_storage: ^8.0.0
   get_it: ^7.6.0
   injectable: ^2.1.2
-
+  google_generative_ai: ^0.4.7
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -36,4 +36,4 @@ flutter:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/images/hopyn_logo.png"
+  image_path: "assets/images/nova.png"

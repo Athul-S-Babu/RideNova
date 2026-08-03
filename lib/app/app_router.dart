@@ -15,7 +15,7 @@ import '../features/ride/presentation/screens/ride_completion_screen.dart';
 import '../features/ride/presentation/screens/ride_history_screen.dart';
 import '../features/ride/presentation/screens/ride_in_progress_screen.dart';
 import '../features/ride/presentation/screens/vehicle_selection_screen.dart';
-
+import '../features/ai_assistant/presentation/pages/ai_assistant_page.dart';
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
 final routerProvider = Provider<GoRouter>((ref) {
@@ -42,6 +42,10 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/home',
         builder: (context, state) => const HomeScreen(),
+      ),
+      GoRoute(
+        path: '/ai-assistant',
+        builder: (context, state) => const AiAssistantPage(),
       ),
       GoRoute(
         path: '/location-selector',

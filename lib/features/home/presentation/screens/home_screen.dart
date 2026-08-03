@@ -6,6 +6,7 @@ import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../providers/home_providers.dart';
+import '../../../ai_assistant/presentation/pages/ai_assistant_page.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -59,6 +60,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   void _navigateToRideHistory() {
     context.go('/ride-history');
+  }
+  void _navigateToAiAssistant() {
+    context.push('/ai-assistant');
   }
 
   // Flag to track if there was a Google Maps error
@@ -153,13 +157,93 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                      'Where to?',
-                      style: context.textTheme.headlineMedium?.copyWith(
-                          color: AppColors.kPrimaryColor
-                      )
+                  // Text(
+                  //     'Where to?',
+                  //     style: context.textTheme.headlineMedium?.copyWith(
+                  //         color: AppColors.kPrimaryColor
+                  //     )
+                  // ),
+                  // const SizedBox(height: 16),
+
+                Text(
+                'Where to?',
+                style: context.textTheme.headlineMedium?.copyWith(
+                  color: AppColors.kPrimaryColor,
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+// ======================
+// RideNova AI Card
+// ======================
+
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color(0xFF4F46E5),
+                      Color(0xFF7C3AED),
+                    ],
                   ),
-                  const SizedBox(height: 16),
+                ),
+                child: Row(
+                  children: [
+                    const CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.smart_toy,
+                        color: Color(0xFF4F46E5),
+                      ),
+                    ),
+
+                    const SizedBox(width: 16),
+
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "RideNova AI",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "Describe your ride naturally.",
+                            style: TextStyle(
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    ElevatedButton(
+                      onPressed: _navigateToAiAssistant,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: const Color(0xFF4F46E5),
+                      ),
+                      child: const Text("Ask AI"),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+// ======================
+// Search Bar
+// ======================
+
+
 
                   // Search Bar / Location Input
                   GestureDetector(

@@ -98,7 +98,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
                 Opacity(
                   opacity: _opacityAnimation.value,
                   child: const Text(
-                    'Hopyn',
+                    'RideNova',
                     style: TextStyle(
                       color: AppColors.kWhite,
                       fontSize: 28,
@@ -114,7 +114,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
                 Opacity(
                   opacity: _opacityAnimation.value,
                   child: const Text(
-                    'Ride with comfort',
+                    'Your Ride.Your Way',
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 16,
